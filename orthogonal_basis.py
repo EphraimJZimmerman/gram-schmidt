@@ -2,13 +2,13 @@ from turtle import dot
 import numpy
 import fractions
 
-# Gram-Schmidt Process
-# Used for Computing an Orthogonal Basis in R^3
+#===============================================#
+# Used for Computing an Orthogonal Basis in R^3 #
+#===============================================#
 
-A = [[6, -2, 0],
-     [-4, 0, 2],
-     [2, 0, -1],
-     [6, -1, 0]]
+A = [[2, 0, 0],
+     [4, 2, 2],
+     [-2, 2, -1]]
 
 v1 = []
 v2 = []
@@ -34,11 +34,15 @@ u3_final = numpy.dot(v3, u2) / numpy.dot(u2, u2)
 u3_final = numpy.multiply(u3_final, u2)
 u3 = numpy.subtract(u3, u3_final)
 
-#This is a commonly used formatter that helps with the floating point issue
-#Remove this if you want decimal answers
-numpy.set_printoptions(formatter={'all':lambda x: str(fractions.Fraction(x).limit_denominator())})
 
-# there should be little arrows on top of the 'U', but that isn't possible in Python
+
+#===========#
+# FORMATTER #
+#===========#
+
+# numpy.set_printoptions(formatter={'all':lambda x: str(fractions.Fraction(x).limit_denominator())})
+
+
 print("u1 =", end=" ")
 print(u1)
 print("u2 =", end=" ")
